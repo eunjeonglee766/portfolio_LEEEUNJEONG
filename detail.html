@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>추가 상세 정보</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 40px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; padding: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #f0ad4e; border-bottom: 2px solid #f0ad4e; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; border-left: 5px solid #f0ad4e; padding-left: 10px; }
+        
+        /* 호버 리스트 및 상세 박스 스타일 (글머리 기호 완전히 제거) */
+        .hover-list { 
+            list-style-type: none; 
+            padding-left: 0; 
+        } 
+        .hover-list li { 
+            padding: 10px; 
+            border-bottom: 1px solid #ddd; 
+            margin-bottom: 5px;
+            position: relative; 
+            cursor: pointer;
+            font-size: 1.1em;
+            color: #dc3545; 
+            font-weight: bold;
+        }
+        .hover-list li:hover { 
+            background-color: #ffe6e6; 
+        }
+        
+        /* 호버 상세 정보 박스 스타일 */
+        .hover-detail {
+            visibility: hidden; 
+            width: 350px; 
+            background-color: #4CAF50; /* 초록색 유지 */
+            color: #fff;
+            text-align: left;
+            padding: 15px; 
+            border-radius: 8px;
+            position: absolute;
+            z-index: 10; 
+            bottom: 100%; 
+            left: 50%;
+            margin-left: -175px; 
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 1.0em; 
+            line-height: 1.6;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .hover-list li:hover .hover-detail {
+            visibility: visible;
+            opacity: 1;
+        }
+        .hover-detail strong { color: #ffeb3b; }
+        .hover-detail br { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>추가 상세 정보</h1>
+        
+        <h2>자격/어학/수상 (마우스 오버 시 상세 정보 확인)</h2>
+        <ul class="hover-list">
+            <li>
+                TOEIC SPEAKING
+                <span class="hover-detail">
+                    <strong>TOEIC SPEAKING</strong><br>기관: YBM 어학<br>취득일자: 2025.08.17
+                </span>
+            </li>
+            <li>
+                산업안전기사
+                <span class="hover-detail">
+                    <strong>산업안전기사</strong><br>기관: 한국산업인력공단<br>취득일자: 2024.06.18
+                </span>
+            </li>
+            <li>
+                ADsP 데이터분석준전문가
+                <span class="hover-detail">
+                    <strong>ADsP 데이터분석준전문가</strong><br>기관: 한국데이터산업진흥원<br>취득일자: 2024.09.06
+                </span>
+            </li>
+            <li>
+                6시그마 Green Belt
+                <span class="hover-detail">
+                    <strong>6시그마 Green Belt</strong><br>기관: 한국자격검정평가진흥원<br>취득일자: 2024.07.29
+                </span>
+            </li>
+            <li>
+                창의상 - 실무형 일경험 프로그램
+                <span class="hover-detail">
+                    <strong>창의상</strong><br>기관: 포스코 인재 창조원<br>수상일자: 2024.06.14
+                </span>
+            </li>
+            <li>
+                장려상 - CNU학습 성장 스토리 영상 공모전
+                <span class="hover-detail">
+                    <strong>장려상</strong><br>기관: 충남대학교 교수학습지원센터<br>수상일자: 2023.01.31
+                </span>
+            </li>
+        </ul>
+
+        
+        <h2>대내외 활동 (마우스 오버 시 상세 정보 확인)</h2>
+        <ul class="hover-list">
+            <li>
+                전기자동차 배터리 시스템 (K-MOOC)
+                <span class="hover-detail">
+                    <strong>전기자동차 배터리 시스템</strong><br>기관: K-MOOC<br>기간: 2024.06~2024.08<br>내용: 고전압 배터리의 구조와 기능, BMU의 제어 및 고장 진단 방법 습득.
+                </span>
+            </li>
+            <li>
+                이차전지 셀 제조 및 특성평가 (전북 이차전지 아카데미)
+                <span class="hover-detail">
+                    <strong>이차전지 셀 제조 및 특성평가</strong><br>기관: 전북 이차전지 아카데미<br>기간: 2024.07~2024.07<br>내용: 코인셀/파우치셀 제작 및 평가 실습. 3인 1조 협력하여 생산 공법 숙달.
+                </span>
+            </li>
+            <li>
+                24년 이차전지 전문인력 단기 교육과정 (한국배터리산업협회)
+                <span class="hover-detail">
+                    <strong>24년 이차전지 전문인력 단기 교육과정</strong><br>기관: 한국배터리산업협회<br>기간: 2024.02~2024.02<br>내용: 차세대 전고체 전지 기술 동향 및 전망 심화 온라인 교육 수강.
+                </span>
+            </li>
+        </ul>
+
+        <hr>
+        <p style="text-align: center;"><a href="index.html">메인 페이지로 돌아가기</a></p>
+    </div>
+</body>
+</html>
