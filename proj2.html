@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>재활용 선별 로봇 구현</title>
+    <style>
+        /* CSS 스타일 유지 및 필요한 경우 검은색/짙은 회색으로 변경 */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; margin: 40px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; padding: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        /* h1 색상: #dc3545 (빨강) -> #333 (진한 회색)으로 변경 권장 (여기서는 원본 유지) */
+        h1 { color: #dc3545; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+        h3 { color: #007bff; margin-top: 25px; border-left: 5px solid #007bff; padding-left: 10px; }
+        .section { margin-bottom: 30px; }
+        .section p { margin-bottom: 15px; }
+        ul.custom-list { list-style-type: none; padding-left: 0; }
+        ul.custom-list li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        ul.custom-list li::before { content: "▶"; color: #28a745; font-weight: bold; position: absolute; left: 0; }
+        .key-result { font-weight: bold; color: #dc3545; margin-top: 15px; display: block; border-top: 1px dashed #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>프로젝트: 로봇이 스스로 주변을 인식하고 환경을 기록하며 복귀하는 완전 자율 시스템</h1>
+        
+        <p style="text-align: center;">
+           <a href="https://drive.google.com/file/d/1ER5rwmofyUapnkEC5EtNt25euTjWtkcS/view?usp=drive_link" target="_blank" style="font-size: 1.2em; color: blue;">
+               🎥 프로젝트 동영상 시청하기 (Google Drive)
+           </a>
+        </p>
+        <hr>
+        
+        <div class="section">
+            <h3>핵심 기술 및 담당 역할</h3>
+            <p><strong>핵심 기술:</strong> ABB 다관절 로봇, PLC제어, **App Inventor**, TCP/IP 소켓 통신, 3D 모델링/프린팅, pc모니터링(파이썬, openCV)
+            <p><strong>주요 역할:</strong> **App Inventor 기반 모바일 HMI 시스템 개발** 및 로봇-PLC/PC 간 안정적인 데이터 통신 로직 구현</p>
+            
+            <ul class="custom-list">
+                <li>**"App Inventor" 기반 원격 제어 애플리케이션 개발** (HMI/UI 설계)</li>
+                <li>PLC-모바일 간 **실시간 데이터 송수신 HMI 구현** 및 시스템 연동 로직 구현</li>
+                <li>최종 성과 홍보를 위한 프로젝트 영상 편집</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>시스템 메커니즘 구축 상세</h3>
+            
+            <h4>1. 모바일 원격 제어 및 데이터 동기화</h4>
+            <p>
+                App Inventor (HMI) 개발을 통해 관리자가 원거리에서도 로봇 시스템을 제어할 수 있는 환경을 구축.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li>원격 제어 기능: 모바일 앱의 시작/정지/재시작 버튼을 PLC를 통해 로봇에 명령하여 **원거리 실시간 통제** 가능.</li>
+                <li>실시간 데이터 동기화: 로봇 작업 처리량이 HMI에 무오차 **"실시간 동기화"**되어 관리자의 즉각적인 의사결정을 지원.</li>
+                <li>통신 안정성: 장시간 연속 운전 테스트에서 **TCP/IP 통신 끊김 및 데이터 누락 없이 안정성 확보**.</li>
+            </ul>
+            
+            <h4>2. 복합 센싱 기반 자동 분류 로직</h4>
+            <p>
+                금속·플라스틱·일반 폐기물을 혼합 공급하고, **금속 및 용량형 센서를 활용**하여 재질을 자동 판별하고 정확하게 분류‧적재하는 로봇 제어 로직을 구현
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li>분류 로직: 판별 결과에 따라 로봇이 금속은 이송 창고, 플라스틱은 재활용 창고, 폐기물은 소각 컨베이어로 분류 및 적재</li>
+                <li>교차 검증: **"물리 센서 판별"**과 **"영상 색상 분석 결과"**를 화면에 표시하여 센서 정확도를 시각적으로 검증, 시스템 신뢰도를 향상</li>
+            </ul>
+            
+            <h4>3. 시스템 최적화를 위한 3D 모델링/제작</h4>
+            <p>
+                시스템에 최적화된 맞춤형 부품을 **"3D 모델링 및 3D 프린터"**로 직접 제작하여 활용
+                (예: 정확한 투입을 위한 유도 장치, 정밀 순차 적재를 위한 4구 홀더)
+            </p>
+        </div>
+
+        <span class="key-result">
+            🏆 핵심 성과: **4개 시스템(로봇/PLC/HMI/센서)의 성공적 통합**, 맞춤형 부품 제작, 실시간 원격 제어 및 양방향 통신 환경 구축
+        </span>
+        
+        <hr>
+        <p style="text-align: center;"><a href="index.html">제조로봇 프로젝트 목록으로 돌아가기</a></p>
+    </div>
+</body>
+</html>

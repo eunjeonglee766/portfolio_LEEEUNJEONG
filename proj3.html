@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>AMR 창고 저장 및 분류 시스템</title>
+    <style>
+        /* CSS 스타일은 원본을 유지합니다. */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; margin: 40px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; padding: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #dc3545; border-bottom: 2px solid #dc3545; padding-bottom: 10px; }
+        h3 { color: #007bff; margin-top: 25px; border-left: 5px solid #007bff; padding-left: 10px; }
+        h4 { color: #333; margin-top: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
+        .section { margin-bottom: 30px; }
+        .section p { margin-bottom: 15px; }
+        ul.role-list { list-style-type: none; padding-left: 0; }
+        ul.role-list li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        ul.role-list li::before { content: "▶"; color: #ffc107; font-weight: bold; position: absolute; left: 0; }
+        .detail-list { list-style-type: disc; margin-left: 20px; }
+        .scenario-list { list-style-type: decimal; margin-left: 20px; font-weight: 500; }
+        .key-result { font-weight: bold; color: #dc3545; margin-top: 20px; display: block; border-top: 1px dashed #eee; padding-top: 10px; }
+        .project-overview { border: 1px solid #007bff; padding: 15px; border-radius: 5px; background-color: #e9f7ff; margin-bottom: 20px; }
+        .problem-list { list-style-type: '❌ '; color: #000; margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>프로젝트: 로봇이 스스로 주변을 인식하고 환경을 기록하며 복귀하는 완전 자율 시스템</h1>
+        
+        <p style="text-align: center;">
+           <a href="https://drive.google.com/file/d/1cXDax8GwyMue2QbItQdhDfbxrFCzKVnr/view?usp=drive_link" target="_blank" style="font-size: 1.2em; color: blue;">
+               🎥 프로젝트 동영상 시청하기 (Google Drive)
+           </a>
+        </p>
+        <hr>
+        
+        <div class="section">
+            <h3>핵심 기술 및 담당 역할</h3>
+            <p>
+                <strong>핵심 기술:</strong> AMR 자율주행 로봇, ABB 다관절 로봇, Arduino, Python, SolidWorks, 3D프린팅
+            </p>
+            <p>
+                <strong>주요 담당 업무:</strong> **프로젝트 전체 구조 설계 및 모델링, 공작물 설계, 구동 메커니즘 설계**를 통해 시스템의 물리적 완성도를 확보.
+            </p>
+            
+            <ul class="role-list">
+                <li>**구조 설계 및 모델링:** AMR 내부 저장 시스템 및 전체 공정 레이아웃 설계</li>
+                <li>**공작물 설계:** 카메라 받침 등 시스템에 필요한 맞춤형 부품 설계</li>
+                <li>**메커니즘 설계:** 서보모터와 연동되는 물품 상하차/적재 흐름의 구동 로직 설계</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>주요 장비별 역할 및 시스템 작동 시나리오</h3>
+            
+            <div class="project-overview">
+                <h4>주요 장비별 역할</h4>
+                <ul class="detail-list" style="margin-left: 10px;">
+                    <li>**AMR:** 자율주행으로 목적지 이동, **"내부 저장 공간"**을 통한 물품 **FIFO(선입선출)** 관리 및 배송</li>
+                    <li>**ABB 다관절 로봇:** 컨테이너의 정확한 적재 및 하역 작업 수행</li>
+                    <li>**컨베이어:** AMR로부터 받은 컨테이너를 창고 입구까지 운반하며 연속적인 물류 흐름 구현</li>
+                    <li>**랙 앤 피니언 기구물:** 컨테이너의 좌/우 방향 위치 조정 및 정렬을 통한 최종 저장 위치 결정</li>
+                </ul>
+            </div>
+            
+
+            <h4>기구 작동 시나리오</h4>
+            <ol class="scenario-list">
+                <li>**초기 적재:** 사용자가 물품을 AMR 내부 창고에 저장 → **FIFO 구조**로 물품 관리 및 로봇 전달 준비</li>
+                <li>**가공 수행:** **"AMR-ABB 로봇 연동"**을 통해 물품 자동 전달 → 로봇이 정밀 가공 후 완성품을 AMR에 재적재</li>
+                <li>**지능형 배송:** **"모바일 앱 연동"**으로 상품 선택 → AMR이 목적지까지 자율주행 → **"선택적 배출 시스템"**을 통해 요청 상품 전달</li>
+            </ol>
+
+            <h4>시스템 관리 기능</h4>
+            <ul class="detail-list">
+                <li>실시간 모니터링 및 작업 상태 확인</li>
+                <li>자동 재보충 알고리즘 적용 및 원클릭 시스템 종료 지원</li>
+                <li>시스템 종료 시 초기 위치 복귀 기능 구현</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>자체 진단 및 개선 방향</h3>
+            
+            <h4>1. 프로젝트 문제점 분석</h4>
+            <ul class="problem-list">
+                <li>**소프트웨어적:** 서보 모터 **"시간 제어 방식의 한계"**로 인한 위치 오차 발생 (MG995 서보 모터 정밀도 부족)</li>
+                <li>**하드웨어적:** **"AMR 위치 정밀도 부족"** 및 물품 가이드 구조의 불안정</li>
+                <li>**구조 설계적:** 전체 구조 복잡성 및 제작 과정에서 일부 단계 생략/누락</li>
+            </ul>
+            
+            <h4>2. 개선 및 발전 방향</h4>
+            <ul class="detail-list">
+                <li>**정밀도 향상:** **"제어 알고리즘 개선"**을 통한 정확도 및 정밀도 확보</li>
+                <li>**안정성 강화:** 패키지 완성품 및 물품 가이드 **"설계 변경"**을 통한 시스템 안정성 강화</li>
+                <li>**시스템 확대:** 다관절 로봇 조립 과정 추가 및 **"Arduino 활용" 지능형 물류 자동화 시스템 구축**</li>
+            </ul>
+        </div>
+
+        <span class="key-result">
+            🏆 핵심 성과: **하드웨어 구조 및 메커니즘 설계 주도**, AMR-로봇-컨베이어 연동을 통한 **물류 자동화 시스템 구축 경험 확보**
+        </span>
+        
+        <hr>
+        <p style="text-align: center;"><a href="index.html">제조로봇 프로젝트 목록으로 돌아가기</a></p>
+    </div>
+</body>
+</html>
